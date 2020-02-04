@@ -1,0 +1,80 @@
+h3 {
+  font-size: 20px;
+  color:green;
+  text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+:host {
+  .loader {
+    height: 4em;
+    display: block;
+    line-height: 4em;
+    text-align: center;
+    position: relative;
+    width: 80%;
+  }
+  .loader:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 2px;
+    background: red;
+    animation: loader-animation 2s ease-out infinite;
+  }
+  @keyframes loader-animation {
+    0% {
+      transform: translate(0%);
+    }
+    100% {
+      transform: translate(500%);
+    }
+  }
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  height: 80%;
+
+  .card-flex-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    column-gap: 20px;
+    row-gap:20px;
+    justify-content: center;
+    // Extra spacing to keep both sides even with the scrollbar
+    margin-right: 10px;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    // .ghost-wrap-items{
+    //   width: 300px;
+    //   height: 120px;
+    //   position: absolute;
+    // }
+
+    .bucket-title{
+      grid-column: 1/ -1;
+      height: 20px;
+
+     // .bucket-title-text{
+        //height: auto;
+        font-size: 12px;
+        letter-spacing: 1.2pt;
+        font-weight: bold;
+        position: relative;
+        top: 4px;
+        color:red;
+      //}
+    }
+    
+  }
+
+
+
+}

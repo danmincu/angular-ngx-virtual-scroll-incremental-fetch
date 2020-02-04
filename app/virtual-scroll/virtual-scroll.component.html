@@ -1,0 +1,22 @@
+<h3> Analysis for the virtual panel and its items life-cycle </h3>
+<!-- <ng-container *ngIf="items$ |async as syncItems"> -->
+   <!-- [parentScroll]="scroll.window"  -->
+<virtual-scroller #scroll 
+    class="card-container scrollbar-theme"
+    (vsEnd)="fetchMore($event)"
+    [bufferAmount]="100"
+    [items]="buffer">
+    <div class="card-flex-box" #container>
+      <app-display-item
+      *ngFor="let item of scroll.viewPortItems; trackBy: trackById"
+      [item]="item"      
+      [class.bucket-title]="isHeader(item)"></app-display-item>
+     </div>
+     <div *ngIf="loading" class="loader">Loading...</div>
+</virtual-scroller>
+
+<div style="padding-top:20px;"> 
+  Total Size: {{buffer.length}}
+</div>
+
+<!-- </ng-container> -->
