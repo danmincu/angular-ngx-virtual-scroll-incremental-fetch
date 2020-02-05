@@ -31,7 +31,7 @@ export class VirtualScrollComponent {
 
 
   public fetchMore(event: IPageInfo) {
-   
+   console.log(JSON.stringify(event));
    // nothing else to be fetched
    if (this.itm.length === this.buffer.length) return; 
 

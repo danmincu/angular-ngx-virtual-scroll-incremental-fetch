@@ -59,11 +59,18 @@ h3 {
     }
 
     .bucket-title{
+      :host{
+         grid-column: 1/ -1;
+         width: 600px;
+      }
+      
       grid-column: 1/ -1;
       height: 120px;
-           
+      display:inline-block;
+      overflow-wrap: break-word; 
       background: orange;
       font-family: monospace;
+      width: 100%;
      // .bucket-title-text{
         //height: auto;
         font-size: 22px;
@@ -74,7 +81,27 @@ h3 {
         color:green;
       //}
     }
-    
+
+    .item-class{      
+      position:relative;
+      //margin: 4px;
+      background: gray;  
+      color:red;
+      overflow-wrap: break-word; 
+      background-color: #1A2128;
+      border: #666666;
+      border-style: solid;
+      border-width: 1px;
+      width:320px;
+      height: 120px;
+      // display: flex;
+      // align-items: flex-start;
+      // font-style: "Segoe UI";
+      font-size: 11px;
+    }
+
+  
+
   }
 
 

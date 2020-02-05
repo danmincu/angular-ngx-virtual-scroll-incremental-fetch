@@ -34,7 +34,7 @@ export class DisplayItemComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // PLEASE NOTE THIS IS CALLED ALL THE TIME, CONTAINER REUTILIZATION IS **NOT** BEING UTILIZED
-   // console.log("ngOnInit for " + this.id + " was called!");
+   // console.log("ngOnInit for " + this.item + " was called!");
 
     this.subscription = this.comesIntoView.pipe(delayWhen(val => interval(10000))).subscribe((i) =>
        console.log("Late notification from: " + this.item))

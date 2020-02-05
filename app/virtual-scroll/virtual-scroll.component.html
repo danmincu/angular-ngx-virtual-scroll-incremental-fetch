@@ -1,18 +1,38 @@
 <h3> Analysis for the virtual panel and its items life-cycle </h3>
 <!-- <ng-container *ngIf="items$ |async as syncItems"> -->
    <!-- [parentScroll]="scroll.window"  -->
+   <!-- [bufferAmount]="100" -->
+   <!-- [enableUnequalChildrenSizes]="true" -->
 <virtual-scroller #scroll 
     class="card-container scrollbar-theme"
     (vsEnd)="fetchMore($event)"
-    [bufferAmount]="100"
+    
     [items]="buffer">
     <div class="card-flex-box" #container>
-      <div *ngFor="let i of ' '.repeat(container.offsetWidth / 320).split('')" class="ghost-wrap-items"></div>
+       <div *ngFor="let i of ' '.repeat(container.offsetWidth / 320).split('')" class="ghost-wrap-items"></div>
+       <ng-container *ngFor="let item of scroll.viewPortItems;">
+         
+          
+          
+          <div *ngIf="isHeader(item)" class="bucket-title">
+            <div >
+              
+              {{item}}
+            </div>
+          </div>
+          <div *ngIf="!(isHeader(item))" style="height:120px;width:320px">
+              <!-- <div >ITEM: {{item}}</div> -->
+              <app-display-item [item]="item"></app-display-item>
+          </div>
+         
+       </ng-container>
+
+      <!-- <div *ngFor="let i of ' '.repeat(container.offsetWidth / 320).split('')" class="ghost-wrap-items"></div>
 
       <app-display-item
       *ngFor="let item of scroll.viewPortItems; trackBy: trackById"
       [item]="item"      
-      [class.bucket-title]="isHeader(item)"></app-display-item>
+      [class.bucket-title]="isHeader(item)"></app-display-item> -->
      </div>
      <div *ngIf="loading" class="loader">Loading...</div>
 </virtual-scroller>
