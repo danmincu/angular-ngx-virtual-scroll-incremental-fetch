@@ -52,24 +52,26 @@ h3 {
     max-width: 1600px;
     margin: 0 auto;
 
-    // .ghost-wrap-items{
-    //   width: 300px;
-    //   height: 120px;
-    //   position: absolute;
-    // }
+    .ghost-wrap-items{
+      width: 300px;
+      height: 120px;
+      position: absolute;
+    }
 
     .bucket-title{
       grid-column: 1/ -1;
-      height: 20px;
-
+      height: 120px;
+           
+      background: orange;
+      font-family: monospace;
      // .bucket-title-text{
         //height: auto;
-        font-size: 12px;
+        font-size: 22px;
         letter-spacing: 1.2pt;
         font-weight: bold;
         position: relative;
-        top: 4px;
-        color:red;
+        top: 0px;
+        color:green;
       //}
     }
     

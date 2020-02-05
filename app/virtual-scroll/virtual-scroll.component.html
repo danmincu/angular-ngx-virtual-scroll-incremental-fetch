@@ -7,6 +7,8 @@
     [bufferAmount]="100"
     [items]="buffer">
     <div class="card-flex-box" #container>
+      <div *ngFor="let i of ' '.repeat(container.offsetWidth / 320).split('')" class="ghost-wrap-items"></div>
+
       <app-display-item
       *ngFor="let item of scroll.viewPortItems; trackBy: trackById"
       [item]="item"      
